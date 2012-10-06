@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+  <title>Test HTML5 Player for iOS</title>
+
+  <script type="text/javascript" src="http://www.ooyala.com/nuplayer/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var skipStartScreen = false;
+
+   function get_player() {
+    return document.getElementById('ooplayer');
+   }
+   function play() {
+    get_player().playMovie();
+   }
+   function pause() {
+    get_player().pauseMovie();
+   }
+   function setPlayheadTime() {
+     get_player().setPlayheadTime($('#playhead_time').val());
+   }
+   function setEmbedCode() {
+    get_player().setEmbedCode($('#embed_code').val());
+   }
+
+ </script>
+
+   </head>
+
+ <body>
+ <div id="player_controls">
+  <input type=button value="Play" onclick="play()"/>
+  <input type=button value="Pause" onclick="pause()"/>
+  <input type=button value="Set Playhead Time" onclick="setPlayheadTime()"/>
+  <input type=text size="5" id="playhead_time"/>
+  <input type=button value="Change Embed Code" onclick="setEmbedCode()"/>
+  <input type=text size="40" id="embed_code"/>
+ </div>
+
+
+ <div id="player-box">
+ <div id="drag-handle"> </div>
+
+
+ <script src="http://player.ooyala.com//player.js?width=
+ 608&embedCode=s0MmVvMTrSlB1ZLzaWXnKZaa42Ib5rJV&height=342&playerId=ooplayer"></script>
+
+
+ <div id="dimensions"></div>
+ </div>
+</body>
+</html>

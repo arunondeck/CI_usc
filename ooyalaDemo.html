@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD
+XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>JavaScript Example of the Ooyala Player API</title>
+</head>
+
+<body>
+
+<script src="http://player.ooyala.com/player.js?callback=
+receiveOoyalaEvent&playerId=player&width=480&height=360&embedCode=
+llMDQ6rMWxVWbvdxs2yduVEtSrNCJUk1&version=2"></script>
+<script>
+
+function receiveOoyalaEvent(playerId, eventName, eventArgs) {
+var ciecc,ttc,ecc,vc;
+
+ switch(eventName) {
+   case "playheadTimeChanged":
+     onPlayheadTimeChanged(eventArgs);
+     break;
+   case "stateChanged":
+     onStateChanged(eventArgs);
+     break;
+   case "currentItemEmbedCodeChanged":
+     onCurrentItemEmbedCodeChanged(eventArgs);
+     ciecc=eventArgs;
+     break;
+   case "totalTimeChanged":
+     onTotalTimeChanged(eventArgs);
+     ttc=eventArgs;
+     break;
+   case "embedCodeChanged":
+     onEmbedCodeChanged(eventArgs);
+     ecc=eventArgs;
+     break;
+   case "volumeChanged":
+     onVolumeChanged(eventArgs);
+     break;
+   case "apiReady":
+     //note: apiReady event has no eventArgs (3rd call-back parameter)
+     onCurrentItemEmbedCodeChanged(ciecc);
+     onTotalTimeChanged(ttc);
+     onEmbedCodeChanged(ecc);
+     break;
+ }
+}
+
+function onEmbedCodeChanged(eventArgs) {
+ document.getElementById("embedCode").innerHTML =
+ eventArgs.embedCode + " == " + document.getElementById("player").getEmbedCode();
+ document.getElementById("title").innerHTML = eventArgs.title + " == " +
+ document.getElementById('player').getTitle();
+}
+
+function onCurrentItemEmbedCodeChanged(eventArgs) {
+ document.getElementById("currentItemEmbedCode").innerHTML = 
+ eventArgs.embedCode +" == " + document.getElementById("player")
+ .getCurrentItemEmbedCode();
+ document.getElementById("currentItemTitle").innerHTML = 
+ eventArgs.title +" == " + document.getElementById("player").getCurrentItemTitle();
+}
+
+function onTotalTimeChanged(eventArgs) {
+ document.getElementById("totalTime").innerHTML =
+ eventArgs.totalTime + " == " + document.getElementById("player").getTotalTime();
+}
+
+function onPlayheadTimeChanged(eventArgs) {
+ document.getElementById("playheadTime").innerHTML =
+ eventArgs.playheadTime + " == "+document.getElementById("player").getPlayheadTime();
+}
+
+function onVolumeChanged(eventArgs) {
+ document.getElementById("volume").innerHTML =
+ eventArgs.volume + " == " + document.getElementById("player").getVolume();
+}
+function onStateChanged(eventArgs) {
+ document.getElementById("state").innerHTML =
+ eventArgs.state + " == " + document.getElementById("player").getState();
+}
+</script>
+
+State <span id="state"></span>
+<br>
+Embed Code <span id="embedCode"></span>
+<br>
+Title <span id="title"></span>
+<br>
+CurrentItemEmbedCode <span id="currentItemEmbedCode"></span>
+<br>
+CurrentItemTitle <span id="currentItemTitle"></span>
+<br>
+Total Time <span id="totalTime"></span>
+
+<br>
+Playhead Time <span id="playheadTime"></span>
+<br>
+Volume <span id="volume"></span>
+<br>
+<button onclick="document.getElementById('player').playMovie()">Play</button>
+<button onclick="document.getElementById('player').pauseMovie()">Pause</button>
+<button onclick="document.getElementById('player').setPlayheadTime
+(document.getElementById('player')
+.getPlayheadTime() + 30)">
++30s</button>
+<br><br>
+<button onclick="document.getElementById('player').setQueryStringParameters
+({embedCode:'8wNTqa-6MkpEB1c7fNGOpoSJytLptmm9',hide:'share,fullscreen'})">
+Switch Movie</button>
+
+<%= partial :"ganalytics" %>
+</body>
+</html>
