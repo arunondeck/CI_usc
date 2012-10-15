@@ -46,10 +46,10 @@
 			<span> <label for="category_select"> Select Category : </label> </span>
 			<span> <select id="category_select" multiple="multiple" size="5" name="category[]" onchange='selectCategory()'>
 						<option>News</option>
-						<option>About Us</option>
-						<option>Factory</option>
+						<option>Company</option>
+						<option>Leadership</option>
 						<option>Devices</option>
-						<option>Press</option>
+						<option>Investors</option>
 					</select>
 			</span>
 		</div>	

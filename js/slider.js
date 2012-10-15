@@ -12,6 +12,8 @@ function Slider(){
 	
 	$("#next").click(goNext);
 	function goNext(){
+		document.title = 'UnilifeTV';
+		window.location.hash='';
 		if (position == 1) {
 			$('.active').removeClass("active");
 			$('#thumb2').addClass('active');
@@ -173,6 +175,8 @@ function Slider(){
 	
 	$("#previous").click(goPrevious);
 	function goPrevious(){
+		document.title = 'UnilifeTV';
+		window.location.hash='';
 		if (position == 9) {
 			$('.active').removeClass("active");
 			$('#thumb8').addClass('active');

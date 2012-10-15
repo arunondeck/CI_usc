@@ -106,7 +106,8 @@ function ActionOnDomReady()
 			$(".slideText[style*='block']").find('.headline').text($(this).siblings('.vidText').children('.title').text());
 			$(".slideText[style*='block']").find('.subhead').text($(this).siblings('.vidText').children('.caption').text());
 			$('.active').removeClass('active');
-			document.title='UnilifeTV - '+$(this).children().find('img').attr('alt');;
+			window.location.hash='';
+			document.title='UnilifeTV';
 		}
 		
 		$("#panelCont").stop().animate({top: '672px' }, 1000);
@@ -191,5 +192,6 @@ function ActionOnDomReady()
 		$(this).siblings('.slideBack').find('.playerContainer').attr('id','current');
 		$(this).siblings('.slideBack').find('.playerContainer').load(videoUrl,p,function(str){});
 		document.title='UnilifeTV - '+$(this).siblings('.slideText').find('.headline').text();
+		window.location.hash='#!videopcode'+$(this).siblings('.slideBack').find('img').attr('id');
 	});
 }

@@ -16,10 +16,10 @@
 						<ul class="nav cats">
 							<li><a class="catNav activeCat" href="#!ALL_VIDEOS">ALL VIDEOS</a></a></li>
 							<li><a class="catNav" href="#!NEWS">NEWS</a></li>
-							<li><a class="catNav" href="#!ABOUT_US">ABOUT US</a></li>
-							<li><a class="catNav" href="#!FACTORY">FACTORY</a></li>
+							<li><a class="catNav" href="#!COMPANY">COMPANY</a></li>
 							<li><a class="catNav" href="#!DEVICES">DEVICES</a></li>
-							<li><a class="catNav" href="#!PRESS">PRESS</a></li>
+							<li><a class="catNav" href="#!LEADERSHIP">LEADERSHIP</a></li>
+							<li><a class="catNav" href="#!INVESTORS">INVESTORS</a></li>
 						</ul>
 					
 						<div class="clear"></div>

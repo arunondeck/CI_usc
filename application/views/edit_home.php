@@ -151,7 +151,7 @@ $(document).ready(function() {
 							</span>
 							<span>
 								<?php
-									$options = array('News'  => 'News','About Us'=>'About Us','Factory'=>'Factory','Devices'=>'Devices','Press'=>'Press');
+									$options = array('News'  => 'News','Company'=>'Company','Leadership'=>'Leadership','Devices'=>'Devices','Investors'=>'Investors');
 									$attr = 'id="category_select"  size="5"';
 									$categories = explode(',',$result_item['category']);
 									echo form_multiselect('category[]', $options,$categories,$attr);

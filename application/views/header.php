@@ -9,13 +9,13 @@
 	<script type="text/javascript" src="/js/index.js"></script>
 	<script type="text/javascript" src="/js/checkText.js"></script>
 	<script type="text/javascript" src="/js/jquery.touchwipe.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.ba-hashchange.js"></script>
 	-->
 	<?php 
 		echo script_tag('js/slider.js');
 		echo script_tag('js/effects.js');
 		echo script_tag('js/index.js');
 		echo script_tag('js/jquery.touchwipe.min.js');
-		echo script_tag('js/seo.js');
 		echo script_tag('js/jquery.ba-hashchange.js');
 		echo script_tag('js/checkText.js');//*/
 	?>

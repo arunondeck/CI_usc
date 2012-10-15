@@ -23,23 +23,27 @@ class Video extends CI_Controller
 		if($efpos>-1)
 		{
 			//crawler code
-			$arr = explode('?_escaped_fragment_=', $_SERVER['REQUEST_URI']);
-
-			$arr[1] = str_replace("_"," ",$arr[1]);
-			
-			$this->load->view('header');
-			$data['category'] = $this->video_model->get_newest();
-			$this->load->view('slider',$data);
-			$this->load->view('nav_panel');
-			$data['category'] = $this->video_model->show_video($arr[1],$filter);
-			if(!empty($data['category']))
+			if(strpos($_SERVER['REQUEST_URI'],'videopcode'>-1))
 			{
-				$data['page_title'] = $arr[1];
-				$this->load->view('categoryView',$data);
+				//crawler video url under testing
 			}
 			else
-				echo "No Videos for selected category : ".$category;
-			
+			{
+				$arr = explode('?_escaped_fragment_=', $_SERVER['REQUEST_URI']);
+
+				$arr[1] = str_replace("_"," ",$arr[1]);
+				
+				$this->load->view('header');
+				$data['category'] = $this->video_model->get_newest();
+				$this->load->view('slider',$data);
+				$this->load->view('nav_panel');
+				$data['category'] = $this->video_model->show_video($arr[1],$filter);
+				if(!empty($data['category']))
+				{
+					$data['page_title'] = $arr[1];
+					$this->load->view('categoryView',$data);
+				}
+			}
 			$this->load->view('index');
 			return;
 		}
@@ -75,6 +79,15 @@ class Video extends CI_Controller
 		$this->video_model->updateWatched($data['videoCode']);
 		//$this->video_model->putPlayer($videoCode);
 		$this->load->view('showVideo',$data);
+	}
+	public function homevideo($videoCode)
+	{
+		$this->load->model('video_model');
+		$data['videoCode']=$_POST['embedcode'];
+		//$data['videoCode']=$videoCode;
+		$data['video'] = $this->video_model->getVideo($data['videoCode']);
+		$this->video_model->updateWatched($data['videoCode']);
+		$this->load->view('homeVideo',$data);
 	}
 	public function add()
 	{

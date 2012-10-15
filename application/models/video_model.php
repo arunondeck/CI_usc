@@ -18,8 +18,12 @@ class video_model extends CI_model
 		</embed>
 	</object>';
 	}
-	public function playVideo()
+	public function getVideo($videoCode)
 	{
+		$this->db->select('id,title,description,category,date,thumbnail');
+		$this->db->where('url',$videoCode);
+		$query=$this->db->get('video');
+		return $query->row_array();
 	}
 	public function rateVideo()
 	{
