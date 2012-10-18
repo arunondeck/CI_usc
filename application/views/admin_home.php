@@ -3,10 +3,11 @@
 	<div class="add_vid">
 		<?php //echo anchor('admin/add','Add New Video');?>
 		<ul class="menu" id="menu">
-			<li><a href="javascript:void(0);" class="menulink">Add New Video</a>
+			<li><a href="javascript:void(0);" class="menulink">Video Settings</a>
 				<ul>
 					<li><?php echo anchor('admin/add','Add Ooyala Video');?></li>
 					<li><?php echo anchor('admin/upload','Upload Video');?></li>
+					<li><?php echo anchor('admin/sortVideo','Arrange Videos');?></li>
 				</ul>
 			</li>
 		</ul>

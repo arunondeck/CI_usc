@@ -111,6 +111,7 @@ Class admin_model extends CI_Model
 	function video_details()
 	{
 		$this->db->select('id, title, description, category, thumbnail, url');
+		$this->db->order_by('position','ASC');
 		$query = $this->db->get('video');
 		//echo "<BR>";
 		//foreach($query ->result_array() as $row)
@@ -182,7 +183,7 @@ Class admin_model extends CI_Model
 			$video_changes=explode('=',$videoPosition);
 			
 			if(empty($video_changes[0]))
-				break;	
+				break;
 			$data = array('position'=>$video_changes[1]);
 			$this->db->where('id',$video_changes[0]);
 			$this->db->update('video',$data);

@@ -106,6 +106,14 @@ class video_model extends CI_model
 				
 		return $query->result_array();
 	}
+	
+	public function get_list()
+	{
+		$sql = "SELECT id, title, description, category, thumbnail, url, DATE_FORMAT( date, '%m.%d.%y' ) AS date FROM video ORDER BY position ASC LIMIT 9";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	
 	public function show_video($category,$filter='date')
 	{
 		//echo" attained nirvana ".$category." ".$filter;

@@ -34,7 +34,7 @@ class Video extends CI_Controller
 				$arr[1] = str_replace("_"," ",$arr[1]);
 				
 				$this->load->view('header');
-				$data['category'] = $this->video_model->get_newest();
+				$data['category'] = $this->video_model->get_list();
 				$this->load->view('slider',$data);
 				$this->load->view('nav_panel');
 				$data['category'] = $this->video_model->show_video($arr[1],$filter);
@@ -60,7 +60,7 @@ class Video extends CI_Controller
 		}
 		else
 		{
-			$data['category'] = $this->video_model->get_newest();
+			$data['category'] = $this->video_model->get_list();
 			$this->load->view('header');
 			$this->load->view('slider',$data);
 			$this->load->view('nav_panel');

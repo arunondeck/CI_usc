@@ -336,7 +336,7 @@ ul.menu .topline
 .vid_entry
 {
     border: 1px solid;
-    height: 100px;
+    height: 79px;
     overflow: visible;
 	margin-bottom:10px;
 	background-color:#FEFEFE;
@@ -352,4 +352,11 @@ ul.menu .topline
 	float: left;
     text-align: center;
     width: 60%;
+}
+#note
+{
+	float:left; 
+	width:30%; 
+	font-size:11px; 
+	padding-top:20px;
 }

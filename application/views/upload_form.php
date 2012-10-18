@@ -37,7 +37,7 @@
 			</div>
 		</form>
 	</div>
-	<div id="upload_note" style="float:left; width:30%; font-size:11px; padding-top:20px;">
+	<div id="note">
 		<div>
 			<strong>About uploading</strong>
 			<p>Uploads usually take 1-5 minutes per MB on a high-speed connection, and converting your video takes an additional 3-5 minutes per MB. </p>
