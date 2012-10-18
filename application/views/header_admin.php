@@ -86,9 +86,9 @@
 			}
 		}
 	</script>
-
+<!--
 	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/unilifecorp.json?callback=twitterCallback2&count=1&"></script>
-
+-->
 	<div id="mainHead">
 			<a href="<?php echo base_url()?>"><div id="logo"></div></a>
 			<div id="nav">

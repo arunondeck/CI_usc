@@ -12,6 +12,9 @@
 		</ul>
 	</div>
 	<div class="logout"><?php echo anchor('admin/logout','Logout <em>' . $username) . '</em>'; ?></div>
+	<div style='text-align:right; margin:10px 10px 0 0;'> 
+		<?php echo'<em>'; echo anchor('admin/changepassword','Change Password'); echo'</em>';?> 
+	</div>
 	<div id="videoList">
 		<?php include('edit_home.php'); ?>
 	</div>

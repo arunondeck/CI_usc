@@ -167,6 +167,28 @@ Class admin_model extends CI_Model
 		return $this->add_uploadVideo($formData);
 	}
 	
+	function changePassword($newPassword)
+	{
+		$data = array('password'=>MD5($newPassword));
+		$this->db->where('username','admin');
+		$this->db->update('users',$data);
+	}
+	
+	function videoSort($position)
+	{
+		$positions = explode(';',$position);
+		foreach ($positions as $videoPosition)
+		{
+			$video_changes=explode('=',$videoPosition);
+			
+			if(empty($video_changes[0]))
+				break;	
+			$data = array('position'=>$video_changes[1]);
+			$this->db->where('id',$video_changes[0]);
+			$this->db->update('video',$data);
+		}
+	}
+	
 	function add_uploadVideo($formData)
 	{
 		$tempImage = "videothumbs/error-960x540.JPG";

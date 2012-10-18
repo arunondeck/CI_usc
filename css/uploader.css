@@ -73,6 +73,7 @@ vertical-align:top;
 	border: 1px solid #CCCCCC;
 	width:130px;
 	margin-top:4px;
+	text-align:center;
 }
 
 .add_vid
@@ -320,4 +321,35 @@ ul.menu ul ul
 ul.menu .topline 
 {
 	border-top:1px solid #aaa;
+}
+#update
+{
+	background-color: #000000;
+    border-radius: 20px 20px 20px 20px;
+    color: #FFFFFF;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100px;
+}
+.vid_entry
+{
+    border: 1px solid;
+    height: 100px;
+    overflow: visible;
+	margin-bottom:10px;
+	background-color:#FEFEFE;
+}
+.sort_thumb
+{
+	float:right;
+	margin-right:10px;
+}
+.sort_title
+{
+	margin-top:10%;
+	float: left;
+    text-align: center;
+    width: 60%;
 }

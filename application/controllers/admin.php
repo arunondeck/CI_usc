@@ -302,7 +302,53 @@ class admin extends CI_Controller
 		$this->load->view('edit_success',$data);
 		$this->load->view('index_admin');
 	}
+	
+	function changePassword()
+	{
+	
+		if(!$this->session->userdata('logged_in'))
+			redirect('admin','refresh');
 
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+		if($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('header_admin');
+			$this->load->view('changePassword');
+		}
+		else
+		{
+			$data['newPassword']=$_POST['password'];
+			$this->admin_model->changePassword($data['newPassword']);
+			$this->load->view('header_admin');
+			$this->load->view('passwrdSuccess');
+		}
+		$this->load->view('index_admin');		
+	}
+	
+	function sortVideo()
+	{
+		$data['results'] = $this->admin_model->video_details();
+		/*
+		echo"<PRE>";
+			print_r($data['results']);
+		echo"</PRE>";
+		*/
+		$this->load->view('header_admin');
+		$this->load->view('sortvideo',$data);
+		$this->load->view('index_admin');	
+		
+	}
+	function sortOrder()
+	{
+		/*
+		echo"<PRE>";
+			print_r($_POST);
+		echo"</PRE>";
+		*/
+		$this->admin_model->videoSort($_POST['position']);
+		$this->load->view('sort_success');
+	}
 }
 
 ?>

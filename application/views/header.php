@@ -97,7 +97,7 @@
 		}
 	</script>
 
-	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/unilifecorp.json?callback=twitterCallback2&count=1&"></script>
+	<script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?screen_name=unilifecorp&callback=twitterCallback2&count=1"></script>
 
 	<div id="mainHead">
 			<a href="<?php echo base_url() ?>"><div id="logo"></div> </a>
