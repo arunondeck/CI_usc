@@ -4,10 +4,10 @@
 			<?php echo heading("Arrange Video Order",3); ?>
 		</div>
 		<div>
-			<script type='text/javascript' src = '/2.unilife/js/jquery.ui.core.js'> </script>
-			<script type='text/javascript' src = '/2.unilife/js/jquery.ui.widget.js'> </script>
-			<script type='text/javascript' src = '/2.unilife/js/jquery.ui.mouse.js'> </script>
-			<script type='text/javascript' src = '/2.unilife/js/jquery.ui.sortable.js'> </script>
+			<script type='text/javascript' src = '/js/jquery.ui.core.js'> </script>
+			<script type='text/javascript' src = '/js/jquery.ui.widget.js'> </script>
+			<script type='text/javascript' src = '/js/jquery.ui.mouse.js'> </script>
+			<script type='text/javascript' src = '/js/jquery.ui.sortable.js'> </script>
 			<script type='text/javascript'>
 				$(function() {
 					$( "#sortable" ).sortable();

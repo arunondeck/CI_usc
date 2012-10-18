@@ -7,7 +7,7 @@
 				<ul>
 					<li><?php echo anchor('admin/add','Add Ooyala Video');?></li>
 					<li><?php echo anchor('admin/upload','Upload Video');?></li>
-					<li><?php echo anchor('admin/sortVideo','Arrange Videos');?></li>
+					<li><?php echo anchor('admin/sortVideo','Arrange Video Order');?></li>
 				</ul>
 			</li>
 		</ul>
