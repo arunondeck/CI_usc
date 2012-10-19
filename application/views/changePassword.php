@@ -15,7 +15,7 @@
 					<input id='password' type='password' name='password' value='' />
 				</span>
 			</div>
-			<input id='submit' type='button' value='Change Password' style='margin-left:15%;'/>
+			<input id='submit' type='submit' value='Change Password' style='margin-left:15%;'/>
 			<?php echo form_close(); ?>
 		</div>
 	</div>
@@ -27,15 +27,3 @@
 	?>
 	</div>
 </div>
-<script type='text/javascript'>
-	function validate(form)
-	{
-		var e = form.elements;
-		if(e['password'].value != e['confirm-password'].value) 
-		{
-			alert('Your passwords do not match. Re-enter');
-			return false;
-		}
-		form.submit();
-	}
-</script>
